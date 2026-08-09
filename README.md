@@ -1,5 +1,13 @@
 # Quantum Secure Chat
 
+<div align="center">
+  <img src="https://img.shields.io/github/repo-size/givemehat/Quantum-sEcure-Chat?style=for-the-badge&color=blue" alt="Repository Size" />
+  <img src="https://img.shields.io/github/license/givemehat/Quantum-sEcure-Chat?style=for-the-badge&color=green" alt="License" />
+  <img src="https://img.shields.io/github/commit-activity/m/givemehat/Quantum-sEcure-Chat?style=for-the-badge&color=orange" alt="Commit Activity" />
+  <img src="https://img.shields.io/github/last-commit/givemehat/Quantum-sEcure-Chat?style=for-the-badge&color=red" alt="Last Commit" />
+</div>
+
+
 A highly secure chat application leveraging concepts from Quantum Cryptography to ensure unbreakable end-to-end communication.
 
 ## Features

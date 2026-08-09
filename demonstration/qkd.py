@@ -4,18 +4,17 @@ import random
 
 
 def generate_quantum_key(length: int = 8) -> str:
-    
-    simulator = AerSimulator()
 
+    simulator = AerSimulator()
 
     max_attempts = 10
     for attempt in range(max_attempts):
         # Alice randomly picks bits and bases
-        alice_bits  = [random.randint(0, 1) for _ in range(length)]
+        alice_bits = [random.randint(0, 1) for _ in range(length)]
         alice_bases = [random.randint(0, 1) for _ in range(length)]
 
         # Bob randomly picks measurement bases
-        #two types of bases: 0 for rectilinear (|0⟩, |1⟩) and 1 for diagonal (|+⟩, |*⟩)
+        # two types of bases: 0 for rectilinear (|0⟩, |1⟩) and 1 for diagonal (|+⟩, |*⟩)
         bob_bases = [random.randint(0, 1) for _ in range(length)]
 
         key = []
@@ -39,7 +38,7 @@ def generate_quantum_key(length: int = 8) -> str:
 
             # Run the circuit on the simulator
             compiled = transpile(qc, simulator)
-            result   = simulator.run(compiled, shots=1).result()
+            result = simulator.run(compiled, shots=1).result()
 
             measured_bit = int(list(result.get_counts().keys())[0])
 
@@ -48,7 +47,7 @@ def generate_quantum_key(length: int = 8) -> str:
                 key.append(str(measured_bit))
 
         if key:  # Non-empty sifted key — success
-            return ''.join(key)
+            return "".join(key)
 
     raise RuntimeError(
         f"Failed to generate a non-empty quantum key after {max_attempts} attempts. "
