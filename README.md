@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/github/last-commit/givemehat/quantum-secure-chat?style=for-the-badge&color=red" alt="Last Commit" />
 </div>
 
-A highly secure chat application leveraging concepts from Quantum Cryptography to ensure unbreakable end-to-end communication.
+#A highly secure chat application leveraging concepts from Quantum Cryptography to ensure unbreakable end-to-end communication.
 
 ## Features
 
