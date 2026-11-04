@@ -1,21 +1,23 @@
 from qiskit import QuantumCircuit, transpile
 from qiskit_aer import AerSimulator
-import random
+import secrets
 
 
 def generate_quantum_key(length: int = 8) -> str:
+    if not isinstance(length, int) or length < 1:
+        raise ValueError("Key length must be a positive integer.")
 
     simulator = AerSimulator()
 
     max_attempts = 10
     for attempt in range(max_attempts):
         # Alice randomly picks bits and bases
-        alice_bits = [random.randint(0, 1) for _ in range(length)]
-        alice_bases = [random.randint(0, 1) for _ in range(length)]
+        alice_bits = [secrets.randbelow(2) for _ in range(length)]
+        alice_bases = [secrets.randbelow(2) for _ in range(length)]
 
         # Bob randomly picks measurement bases
         # two types of bases: 0 for rectilinear (|0⟩, |1⟩) and 1 for diagonal (|+⟩, |*⟩)
-        bob_bases = [random.randint(0, 1) for _ in range(length)]
+        bob_bases = [secrets.randbelow(2) for _ in range(length)]
 
         key = []
 
