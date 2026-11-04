@@ -23,5 +23,7 @@ def decrypt(ciphertext: str, key: str) -> str:
     try:
         plaintext = _cipher(key).decrypt(ciphertext.encode("ascii"))
     except (UnicodeEncodeError, InvalidToken) as exc:
-        raise ValueError("Ciphertext is invalid or was encrypted with another key.") from exc
+        raise ValueError(
+            "Ciphertext is invalid or was encrypted with another key."
+        ) from exc
     return plaintext.decode("utf-8")
